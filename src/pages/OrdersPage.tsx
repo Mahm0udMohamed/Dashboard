@@ -284,7 +284,7 @@ export default function OrdersPage() {
                     <TableCell>{order.totalAmount} ر.س</TableCell>
                     <TableCell>{getStatusBadge(order.status)}</TableCell>
                     <TableCell>
-                      {new Date(order.orderDate).toLocaleDateString("ar-SA")}
+                      {new Date(order.orderDate).toLocaleDateString("en-GB")}
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
@@ -335,7 +335,7 @@ export default function OrdersPage() {
                                       <strong>التاريخ:</strong>{" "}
                                       {new Date(
                                         selectedOrder.orderDate
-                                      ).toLocaleDateString("ar-SA")}
+                                      ).toLocaleDateString("en-GB")}
                                     </p>
                                     <p>
                                       <strong>الحالة:</strong>{" "}

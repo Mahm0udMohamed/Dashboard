@@ -55,7 +55,7 @@ export default function AnalyticsPage() {
           التحليلات والتقارير
         </h1>
         <div className="text-sm text-muted-foreground">
-          آخر تحديث: {new Date().toLocaleDateString("ar-SA")}
+          آخر تحديث: {new Date().toLocaleDateString("en-GB")}
         </div>
       </div>
 

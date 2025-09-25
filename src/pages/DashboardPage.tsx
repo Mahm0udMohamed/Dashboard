@@ -51,7 +51,7 @@ export default function DashboardPage() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-foreground">لوحة التحكم</h1>
         <div className="text-sm text-muted-foreground">
-          {new Date().toLocaleDateString("ar-SA")}
+          {new Date().toLocaleDateString("en-GB")}
         </div>
       </div>
 
