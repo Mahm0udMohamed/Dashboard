@@ -348,3 +348,30 @@
     transform: translateX(-50%) translateY(-50%) translateY(-200px) scale(0.95);
   }
 }
+
+/* Fix for Select dropdown focus border issue */
+[data-radix-select-trigger]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-select-trigger][data-state="open"] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-radix-select-trigger][data-state="closed"] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus ring from select triggers */
+.select-trigger:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.select-trigger:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
