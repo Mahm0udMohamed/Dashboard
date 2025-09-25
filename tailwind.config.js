@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "Cairo", "Tajawal", "system-ui", "sans-serif"],
         mono: ["Inter", "monospace"],
       },
       colors: {
@@ -66,5 +66,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-rtl")],
 };
