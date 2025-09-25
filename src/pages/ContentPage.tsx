@@ -272,60 +272,45 @@ export default function ContentPage() {
   };
 
   return (
-    <div className="space-y-6 rtl:text-right">
-      <div className="flex items-center justify-end rtl:justify-start">
-        <h1 className="text-3xl font-bold text-foreground rtl:text-right">
-          إدارة المحتوى
-        </h1>
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-foreground">إدارة المحتوى</h1>
       </div>
 
-      <Tabs defaultValue="hero" className="space-y-4 rtl:text-right">
-        <TabsList className="grid w-full grid-cols-3 rtl:text-center">
-          <TabsTrigger value="hero" className="rtl:text-center">
-            شرائح الهيرو
-          </TabsTrigger>
-          <TabsTrigger value="categories" className="rtl:text-center">
-            الفئات
-          </TabsTrigger>
-          <TabsTrigger value="occasions" className="rtl:text-center">
-            المناسبات
-          </TabsTrigger>
+      <Tabs defaultValue="hero" className="space-y-4">
+        <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="hero">شرائح الهيرو</TabsTrigger>
+          <TabsTrigger value="categories">الفئات</TabsTrigger>
+          <TabsTrigger value="occasions">المناسبات</TabsTrigger>
         </TabsList>
 
         {/* Hero Slides Tab */}
-        <TabsContent value="hero" className="space-y-4 rtl:text-right">
+        <TabsContent value="hero" className="space-y-4">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between rtl:flex-row-reverse">
-                <div className="rtl:text-right">
-                  <CardTitle className="rtl:text-right">شرائح الهيرو</CardTitle>
-                  <CardDescription className="rtl:text-right">
-                    إدارة شرائح الصفحة الرئيسية
-                  </CardDescription>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle>شرائح الهيرو</CardTitle>
+                  <CardDescription>إدارة شرائح الصفحة الرئيسية</CardDescription>
                 </div>
                 <Dialog open={isAddSlideOpen} onOpenChange={setIsAddSlideOpen}>
                   <DialogTrigger asChild>
-                    <Button className="rtl:flex-row-reverse">
-                      <Plus className="w-4 h-4 rtl:ml-2 rtl:mr-0" />
+                    <Button>
+                      <Plus className="w-4 h-4 mr-2" />
                       إضافة شريحة
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-2xl rtl:text-right">
-                    <DialogHeader className="rtl:text-right">
-                      <DialogTitle className="rtl:text-right">
-                        إضافة شريحة جديدة
-                      </DialogTitle>
-                      <DialogDescription className="rtl:text-right">
+                  <DialogContent className="max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>إضافة شريحة جديدة</DialogTitle>
+                      <DialogDescription>
                         أضف شريحة جديدة للصفحة الرئيسية
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="grid gap-4 py-4 rtl:text-right">
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-titleAr"
-                            className="rtl:text-right"
-                          >
+                    <div className="grid gap-4 py-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="slide-titleAr">
                             العنوان بالعربية *
                           </Label>
                           <Input
@@ -337,14 +322,10 @@ export default function ContentPage() {
                                 titleAr: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-titleEn"
-                            className="rtl:text-right"
-                          >
+                        <div className="space-y-2">
+                          <Label htmlFor="slide-titleEn">
                             العنوان بالإنجليزية *
                           </Label>
                           <Input
@@ -356,16 +337,12 @@ export default function ContentPage() {
                                 titleEn: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-subtitleAr"
-                            className="rtl:text-right"
-                          >
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="slide-subtitleAr">
                             العنوان الفرعي بالعربية
                           </Label>
                           <Input
@@ -377,14 +354,10 @@ export default function ContentPage() {
                                 subtitleAr: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-subtitleEn"
-                            className="rtl:text-right"
-                          >
+                        <div className="space-y-2 ">
+                          <Label htmlFor="slide-subtitleEn">
                             العنوان الفرعي بالإنجليزية
                           </Label>
                           <Input
@@ -396,17 +369,11 @@ export default function ContentPage() {
                                 subtitleEn: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
                       </div>
-                      <div className="space-y-2 rtl:text-right">
-                        <Label
-                          htmlFor="slide-imageUrl"
-                          className="rtl:text-right"
-                        >
-                          رابط الصورة
-                        </Label>
+                      <div className="space-y-2 ">
+                        <Label htmlFor="slide-imageUrl">رابط الصورة</Label>
                         <Input
                           id="slide-imageUrl"
                           value={newSlide.imageUrl}
@@ -417,15 +384,11 @@ export default function ContentPage() {
                             })
                           }
                           placeholder="https://example.com/image.jpg"
-                          className="rtl:text-right"
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-buttonAr"
-                            className="rtl:text-right"
-                          >
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="slide-buttonAr">
                             نص الزر بالعربية
                           </Label>
                           <Input
@@ -437,14 +400,10 @@ export default function ContentPage() {
                                 buttonTextAr: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-buttonEn"
-                            className="rtl:text-right"
-                          >
+                        <div className="space-y-2 ">
+                          <Label htmlFor="slide-buttonEn">
                             نص الزر بالإنجليزية
                           </Label>
                           <Input
@@ -456,18 +415,12 @@ export default function ContentPage() {
                                 buttonTextEn: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-link"
-                            className="rtl:text-right"
-                          >
-                            الرابط
-                          </Label>
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="slide-link">الرابط</Label>
                           <Input
                             id="slide-link"
                             value={newSlide.link}
@@ -475,16 +428,10 @@ export default function ContentPage() {
                               setNewSlide({ ...newSlide, link: e.target.value })
                             }
                             placeholder="/products"
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="slide-priority"
-                            className="rtl:text-right"
-                          >
-                            الأولوية
-                          </Label>
+                        <div className="space-y-2 ">
+                          <Label htmlFor="slide-priority">الأولوية</Label>
                           <Input
                             id="slide-priority"
                             type="number"
@@ -495,15 +442,11 @@ export default function ContentPage() {
                                 priority: Number(e.target.value),
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
                       </div>
-                      <div className="flex items-center justify-end rtl:justify-start gap-2">
-                        <Label
-                          htmlFor="slide-isActive"
-                          className="rtl:text-right order-2 rtl:order-1"
-                        >
+                      <div className="flex items-center justify-end  gap-2">
+                        <Label htmlFor="slide-isActive" className=" order-2">
                           نشط
                         </Label>
                         <Switch
@@ -512,91 +455,72 @@ export default function ContentPage() {
                           onCheckedChange={(checked) =>
                             setNewSlide({ ...newSlide, isActive: checked })
                           }
-                          className="order-1 rtl:order-2"
+                          className="order-1"
                         />
                       </div>
                     </div>
-                    <DialogFooter className="flex justify-start rtl:justify-end">
+                    <DialogFooter className="flex justify-start ">
                       <Button
                         variant="outline"
                         onClick={() => setIsAddSlideOpen(false)}
-                        className="rtl:text-right"
                       >
                         إلغاء
                       </Button>
-                      <Button
-                        onClick={handleAddSlide}
-                        className="rtl:text-right"
-                      >
-                        إضافة الشريحة
-                      </Button>
+                      <Button onClick={handleAddSlide}>إضافة الشريحة</Button>
                     </DialogFooter>
                   </DialogContent>
                 </Dialog>
               </div>
             </CardHeader>
             <CardContent>
-              <Table className="rtl:table">
+              <Table className="">
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="rtl:text-right">الصورة</TableHead>
-                    <TableHead className="rtl:text-right">العنوان</TableHead>
-                    <TableHead className="rtl:text-right">
-                      العنوان الفرعي
-                    </TableHead>
-                    <TableHead className="rtl:text-right">الأولوية</TableHead>
-                    <TableHead className="rtl:text-right">الحالة</TableHead>
-                    <TableHead className="rtl:text-right">الإجراءات</TableHead>
+                    <TableHead>الصورة</TableHead>
+                    <TableHead>العنوان</TableHead>
+                    <TableHead>العنوان الفرعي</TableHead>
+                    <TableHead>الأولوية</TableHead>
+                    <TableHead>الحالة</TableHead>
+                    <TableHead>الإجراءات</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {heroSlides.map((slide) => (
                     <TableRow key={slide.id}>
-                      <TableCell className="rtl:text-center">
+                      <TableCell>
                         <img
                           src={slide.imageUrl || "/placeholder.svg"}
                           alt={slide.titleAr}
-                          className="w-16 h-10 object-cover rounded mx-auto"
+                          className="w-16 h-10 object-cover rounded"
                         />
                       </TableCell>
-                      <TableCell className="rtl:text-right">
+                      <TableCell>
                         <div>
-                          <div className="font-medium rtl:text-right">
-                            {slide.titleAr}
-                          </div>
-                          <div className="text-sm text-muted-foreground rtl:text-right">
+                          <div className="font-medium ">{slide.titleAr}</div>
+                          <div className="text-sm text-muted-foreground ">
                             {slide.titleEn}
                           </div>
                         </div>
                       </TableCell>
-                      <TableCell className="rtl:text-right">
+                      <TableCell>
                         <div>
-                          <div className="text-sm rtl:text-right">
-                            {slide.subtitleAr}
-                          </div>
-                          <div className="text-xs text-muted-foreground rtl:text-right">
+                          <div className="text-sm ">{slide.subtitleAr}</div>
+                          <div className="text-xs text-muted-foreground ">
                             {slide.subtitleEn}
                           </div>
                         </div>
                       </TableCell>
-                      <TableCell className="rtl:text-center">
-                        {slide.priority}
-                      </TableCell>
-                      <TableCell className="rtl:text-center">
+                      <TableCell>{slide.priority}</TableCell>
+                      <TableCell>
                         <Badge
                           variant={slide.isActive ? "default" : "secondary"}
-                          className="rtl:text-center"
                         >
                           {slide.isActive ? "نشط" : "غير نشط"}
                         </Badge>
                       </TableCell>
-                      <TableCell className="rtl:text-center">
-                        <div className="flex items-center gap-2 rtl:flex-row-reverse rtl:justify-center">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="rtl:flex-row-reverse"
-                          >
+                      <TableCell>
+                        <div className="flex items-center gap-2  ">
+                          <Button variant="outline" size="sm">
                             <Edit className="w-4 h-4" />
                           </Button>
                           <Button
@@ -607,7 +531,6 @@ export default function ContentPage() {
                                 heroSlides.filter((s) => s.id !== slide.id)
                               )
                             }
-                            className="rtl:flex-row-reverse"
                           >
                             <Trash2 className="w-4 h-4" />
                           </Button>
@@ -622,44 +545,35 @@ export default function ContentPage() {
         </TabsContent>
 
         {/* Categories Tab */}
-        <TabsContent value="categories" className="space-y-4 rtl:text-right">
+        <TabsContent value="categories" className="space-y-4 ">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between rtl:flex-row-reverse">
-                <div className="rtl:text-right">
-                  <CardTitle className="rtl:text-right">الفئات</CardTitle>
-                  <CardDescription className="rtl:text-right">
-                    إدارة فئات المنتجات
-                  </CardDescription>
+              <div className="flex items-center justify-between ">
+                <div>
+                  <CardTitle>الفئات</CardTitle>
+                  <CardDescription>إدارة فئات المنتجات</CardDescription>
                 </div>
                 <Dialog
                   open={isAddCategoryOpen}
                   onOpenChange={setIsAddCategoryOpen}
                 >
                   <DialogTrigger asChild>
-                    <Button className="rtl:flex-row-reverse">
-                      <Plus className="w-4 h-4 rtl:ml-2 rtl:mr-0" />
+                    <Button>
+                      <Plus className="w-4 h-4 mr-2" />
                       إضافة فئة
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="rtl:text-right">
-                    <DialogHeader className="rtl:text-right">
-                      <DialogTitle className="rtl:text-right">
-                        إضافة فئة جديدة
-                      </DialogTitle>
-                      <DialogDescription className="rtl:text-right">
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>إضافة فئة جديدة</DialogTitle>
+                      <DialogDescription>
                         أضف فئة جديدة للمنتجات
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="grid gap-4 py-4 rtl:text-right">
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="cat-nameAr"
-                            className="rtl:text-right"
-                          >
-                            الاسم بالعربية *
-                          </Label>
+                    <div className="grid gap-4 py-4 ">
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="cat-nameAr">الاسم بالعربية *</Label>
                           <Input
                             id="cat-nameAr"
                             value={newCategory.nameAr}
@@ -669,14 +583,10 @@ export default function ContentPage() {
                                 nameAr: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="cat-nameEn"
-                            className="rtl:text-right"
-                          >
+                        <div className="space-y-2 ">
+                          <Label htmlFor="cat-nameEn">
                             الاسم بالإنجليزية *
                           </Label>
                           <Input
@@ -688,17 +598,11 @@ export default function ContentPage() {
                                 nameEn: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
                       </div>
-                      <div className="space-y-2 rtl:text-right">
-                        <Label
-                          htmlFor="cat-imageUrl"
-                          className="rtl:text-right"
-                        >
-                          رابط الصورة
-                        </Label>
+                      <div className="space-y-2 ">
+                        <Label htmlFor="cat-imageUrl">رابط الصورة</Label>
                         <Input
                           id="cat-imageUrl"
                           value={newCategory.imageUrl}
@@ -708,17 +612,11 @@ export default function ContentPage() {
                               imageUrl: e.target.value,
                             })
                           }
-                          className="rtl:text-right"
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="cat-sortOrder"
-                            className="rtl:text-right"
-                          >
-                            ترتيب العرض
-                          </Label>
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="cat-sortOrder">ترتيب العرض</Label>
                           <Input
                             id="cat-sortOrder"
                             type="number"
@@ -729,14 +627,10 @@ export default function ContentPage() {
                                 sortOrder: Number(e.target.value),
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="flex items-center justify-end rtl:justify-start gap-2 pt-6">
-                          <Label
-                            htmlFor="cat-isActive"
-                            className="rtl:text-right order-2 rtl:order-1"
-                          >
+                        <div className="flex items-center justify-end  gap-2 pt-6">
+                          <Label htmlFor="cat-isActive" className=" order-2">
                             نشط
                           </Label>
                           <Switch
@@ -748,79 +642,64 @@ export default function ContentPage() {
                                 isActive: checked,
                               })
                             }
-                            className="order-1 rtl:order-2"
+                            className="order-1"
                           />
                         </div>
                       </div>
                     </div>
-                    <DialogFooter className="flex justify-start rtl:justify-end">
+                    <DialogFooter className="flex justify-start ">
                       <Button
                         variant="outline"
                         onClick={() => setIsAddCategoryOpen(false)}
-                        className="rtl:text-right"
                       >
                         إلغاء
                       </Button>
-                      <Button
-                        onClick={handleAddCategory}
-                        className="rtl:text-right"
-                      >
-                        إضافة الفئة
-                      </Button>
+                      <Button onClick={handleAddCategory}>إضافة الفئة</Button>
                     </DialogFooter>
                   </DialogContent>
                 </Dialog>
               </div>
             </CardHeader>
             <CardContent>
-              <Table className="rtl:table">
+              <Table className="">
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="rtl:text-right">الصورة</TableHead>
-                    <TableHead className="rtl:text-right">الاسم</TableHead>
-                    <TableHead className="rtl:text-right">الترتيب</TableHead>
-                    <TableHead className="rtl:text-right">الحالة</TableHead>
-                    <TableHead className="rtl:text-right">الإجراءات</TableHead>
+                    <TableHead>الصورة</TableHead>
+                    <TableHead>الاسم</TableHead>
+                    <TableHead>الترتيب</TableHead>
+                    <TableHead>الحالة</TableHead>
+                    <TableHead>الإجراءات</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {categories.map((category) => (
                     <TableRow key={category.id}>
-                      <TableCell className="rtl:text-center">
+                      <TableCell>
                         <img
                           src={category.imageUrl || "/placeholder.svg"}
                           alt={category.nameAr}
-                          className="w-12 h-12 object-cover rounded mx-auto"
+                          className="w-12 h-12 object-cover rounded"
                         />
                       </TableCell>
-                      <TableCell className="rtl:text-right">
+                      <TableCell>
                         <div>
-                          <div className="font-medium rtl:text-right">
-                            {category.nameAr}
-                          </div>
-                          <div className="text-sm text-muted-foreground rtl:text-right">
+                          <div className="font-medium ">{category.nameAr}</div>
+                          <div className="text-sm text-muted-foreground ">
                             {category.nameEn}
                           </div>
                         </div>
                       </TableCell>
-                      <TableCell className="rtl:text-center">
-                        {category.sortOrder}
-                      </TableCell>
-                      <TableCell className="rtl:text-center">
+                      <TableCell>{category.sortOrder}</TableCell>
+                      <TableCell>
                         <Badge
                           variant={category.isActive ? "default" : "secondary"}
-                          className="rtl:text-center"
                         >
                           {category.isActive ? "نشط" : "غير نشط"}
                         </Badge>
                       </TableCell>
-                      <TableCell className="rtl:text-center">
-                        <div className="flex items-center gap-2 rtl:flex-row-reverse rtl:justify-center">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="rtl:flex-row-reverse"
-                          >
+                      <TableCell>
+                        <div className="flex items-center gap-2  ">
+                          <Button variant="outline" size="sm">
                             <Edit className="w-4 h-4" />
                           </Button>
                           <Button
@@ -831,7 +710,6 @@ export default function ContentPage() {
                                 categories.filter((c) => c.id !== category.id)
                               )
                             }
-                            className="rtl:flex-row-reverse"
                           >
                             <Trash2 className="w-4 h-4" />
                           </Button>
@@ -846,44 +724,35 @@ export default function ContentPage() {
         </TabsContent>
 
         {/* Occasions Tab */}
-        <TabsContent value="occasions" className="space-y-4 rtl:text-right">
+        <TabsContent value="occasions" className="space-y-4 ">
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between rtl:flex-row-reverse">
-                <div className="rtl:text-right">
-                  <CardTitle className="rtl:text-right">المناسبات</CardTitle>
-                  <CardDescription className="rtl:text-right">
-                    إدارة مناسبات المنتجات
-                  </CardDescription>
+              <div className="flex items-center justify-between ">
+                <div>
+                  <CardTitle>المناسبات</CardTitle>
+                  <CardDescription>إدارة مناسبات المنتجات</CardDescription>
                 </div>
                 <Dialog
                   open={isAddOccasionOpen}
                   onOpenChange={setIsAddOccasionOpen}
                 >
                   <DialogTrigger asChild>
-                    <Button className="rtl:flex-row-reverse">
-                      <Plus className="w-4 h-4 rtl:ml-2 rtl:mr-0" />
+                    <Button>
+                      <Plus className="w-4 h-4 mr-2" />
                       إضافة مناسبة
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="rtl:text-right">
-                    <DialogHeader className="rtl:text-right">
-                      <DialogTitle className="rtl:text-right">
-                        إضافة مناسبة جديدة
-                      </DialogTitle>
-                      <DialogDescription className="rtl:text-right">
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>إضافة مناسبة جديدة</DialogTitle>
+                      <DialogDescription>
                         أضف مناسبة جديدة للمنتجات
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="grid gap-4 py-4 rtl:text-right">
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="occ-nameAr"
-                            className="rtl:text-right"
-                          >
-                            الاسم بالعربية *
-                          </Label>
+                    <div className="grid gap-4 py-4 ">
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="occ-nameAr">الاسم بالعربية *</Label>
                           <Input
                             id="occ-nameAr"
                             value={newOccasion.nameAr}
@@ -893,14 +762,10 @@ export default function ContentPage() {
                                 nameAr: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="occ-nameEn"
-                            className="rtl:text-right"
-                          >
+                        <div className="space-y-2 ">
+                          <Label htmlFor="occ-nameEn">
                             الاسم بالإنجليزية *
                           </Label>
                           <Input
@@ -912,17 +777,11 @@ export default function ContentPage() {
                                 nameEn: e.target.value,
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
                       </div>
-                      <div className="space-y-2 rtl:text-right">
-                        <Label
-                          htmlFor="occ-imageUrl"
-                          className="rtl:text-right"
-                        >
-                          رابط الصورة
-                        </Label>
+                      <div className="space-y-2 ">
+                        <Label htmlFor="occ-imageUrl">رابط الصورة</Label>
                         <Input
                           id="occ-imageUrl"
                           value={newOccasion.imageUrl}
@@ -932,17 +791,11 @@ export default function ContentPage() {
                               imageUrl: e.target.value,
                             })
                           }
-                          className="rtl:text-right"
                         />
                       </div>
-                      <div className="grid grid-cols-2 gap-4 rtl:grid-cols-2">
-                        <div className="space-y-2 rtl:text-right">
-                          <Label
-                            htmlFor="occ-sortOrder"
-                            className="rtl:text-right"
-                          >
-                            ترتيب العرض
-                          </Label>
+                      <div className="grid grid-cols-2 gap-4 ">
+                        <div className="space-y-2 ">
+                          <Label htmlFor="occ-sortOrder">ترتيب العرض</Label>
                           <Input
                             id="occ-sortOrder"
                             type="number"
@@ -953,14 +806,10 @@ export default function ContentPage() {
                                 sortOrder: Number(e.target.value),
                               })
                             }
-                            className="rtl:text-right"
                           />
                         </div>
-                        <div className="flex items-center justify-end rtl:justify-start gap-2 pt-6">
-                          <Label
-                            htmlFor="occ-isActive"
-                            className="rtl:text-right order-2 rtl:order-1"
-                          >
+                        <div className="flex items-center justify-end  gap-2 pt-6">
+                          <Label htmlFor="occ-isActive" className=" order-2">
                             نشط
                           </Label>
                           <Switch
@@ -972,23 +821,19 @@ export default function ContentPage() {
                                 isActive: checked,
                               })
                             }
-                            className="order-1 rtl:order-2"
+                            className="order-1"
                           />
                         </div>
                       </div>
                     </div>
-                    <DialogFooter className="flex justify-start rtl:justify-end">
+                    <DialogFooter className="flex justify-start ">
                       <Button
                         variant="outline"
                         onClick={() => setIsAddOccasionOpen(false)}
-                        className="rtl:text-right"
                       >
                         إلغاء
                       </Button>
-                      <Button
-                        onClick={handleAddOccasion}
-                        className="rtl:text-right"
-                      >
+                      <Button onClick={handleAddOccasion}>
                         إضافة المناسبة
                       </Button>
                     </DialogFooter>
@@ -997,54 +842,45 @@ export default function ContentPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <Table className="rtl:table">
+              <Table className="">
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="rtl:text-right">الصورة</TableHead>
-                    <TableHead className="rtl:text-right">الاسم</TableHead>
-                    <TableHead className="rtl:text-right">الترتيب</TableHead>
-                    <TableHead className="rtl:text-right">الحالة</TableHead>
-                    <TableHead className="rtl:text-right">الإجراءات</TableHead>
+                    <TableHead>الصورة</TableHead>
+                    <TableHead>الاسم</TableHead>
+                    <TableHead>الترتيب</TableHead>
+                    <TableHead>الحالة</TableHead>
+                    <TableHead>الإجراءات</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {occasions.map((occasion) => (
                     <TableRow key={occasion.id}>
-                      <TableCell className="rtl:text-center">
+                      <TableCell>
                         <img
                           src={occasion.imageUrl || "/placeholder.svg"}
                           alt={occasion.nameAr}
-                          className="w-12 h-12 object-cover rounded mx-auto"
+                          className="w-12 h-12 object-cover rounded"
                         />
                       </TableCell>
-                      <TableCell className="rtl:text-right">
+                      <TableCell>
                         <div>
-                          <div className="font-medium rtl:text-right">
-                            {occasion.nameAr}
-                          </div>
-                          <div className="text-sm text-muted-foreground rtl:text-right">
+                          <div className="font-medium ">{occasion.nameAr}</div>
+                          <div className="text-sm text-muted-foreground ">
                             {occasion.nameEn}
                           </div>
                         </div>
                       </TableCell>
-                      <TableCell className="rtl:text-center">
-                        {occasion.sortOrder}
-                      </TableCell>
-                      <TableCell className="rtl:text-center">
+                      <TableCell>{occasion.sortOrder}</TableCell>
+                      <TableCell>
                         <Badge
                           variant={occasion.isActive ? "default" : "secondary"}
-                          className="rtl:text-center"
                         >
                           {occasion.isActive ? "نشط" : "غير نشط"}
                         </Badge>
                       </TableCell>
-                      <TableCell className="rtl:text-center">
-                        <div className="flex items-center gap-2 rtl:flex-row-reverse rtl:justify-center">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            className="rtl:flex-row-reverse"
-                          >
+                      <TableCell>
+                        <div className="flex items-center gap-2  ">
+                          <Button variant="outline" size="sm">
                             <Edit className="w-4 h-4" />
                           </Button>
                           <Button
@@ -1055,7 +891,6 @@ export default function ContentPage() {
                                 occasions.filter((o) => o.id !== occasion.id)
                               )
                             }
-                            className="rtl:flex-row-reverse"
                           >
                             <Trash2 className="w-4 h-4" />
                           </Button>
